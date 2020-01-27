@@ -1,25 +1,29 @@
-[debug] [2020-01-21T15:05:38.930Z] ----------------------------------------------------------------------
-[debug] [2020-01-21T15:05:38.937Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2020-01-21T15:05:38.938Z] CLI Version:   7.12.1
-[debug] [2020-01-21T15:05:38.938Z] Platform:      win32
-[debug] [2020-01-21T15:05:38.938Z] Node Version:  v10.16.3
-[debug] [2020-01-21T15:05:38.941Z] Time:          Tue Jan 21 2020 12:05:38 GMT-0300 (GMT-03:00)
-[debug] [2020-01-21T15:05:38.941Z] ----------------------------------------------------------------------
-[debug] [2020-01-21T15:05:38.941Z] 
-[debug] [2020-01-21T15:05:38.967Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-21T15:05:38.968Z] > authorizing via signed-in user
-[debug] [2020-01-21T15:05:38.968Z] [iam] checking project red-social-c9212 for permissions ["firebase.projects.get"]
-[debug] [2020-01-21T15:05:38.974Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-c9212:testIamPermissions  
+[debug] [2020-01-27T12:13:40.156Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T12:13:40.164Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-27T12:13:40.165Z] CLI Version:   7.12.1
+[debug] [2020-01-27T12:13:40.165Z] Platform:      win32
+[debug] [2020-01-27T12:13:40.166Z] Node Version:  v10.16.3
+[debug] [2020-01-27T12:13:40.170Z] Time:          Mon Jan 27 2020 09:13:40 GMT-0300 (GMT-03:00)
+[debug] [2020-01-27T12:13:40.171Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T12:13:40.171Z] 
+[debug] [2020-01-27T12:13:40.259Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-27T12:13:40.260Z] > authorizing via signed-in user
+[debug] [2020-01-27T12:13:40.261Z] [iam] checking project red-social-c9212 for permissions ["firebase.projects.get"]
+[debug] [2020-01-27T12:13:40.268Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-27T12:13:40.269Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-27T12:13:40.581Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T12:13:40.912Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-c9212:testIamPermissions  
 
-[debug] [2020-01-21T15:05:41.504Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-21T15:05:41.524Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-c9212  
+[debug] [2020-01-27T12:13:42.524Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T12:13:42.527Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-c9212  
  
-[debug] [2020-01-21T15:05:44.101Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T12:13:45.505Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\lenovo\Desktop\red\SCL012-Social-Network'...
 [info] 
-[debug] [2020-01-21T15:05:44.155Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-c9212/webApps/-/config  
+[debug] [2020-01-27T12:13:45.515Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-c9212/webApps/-/config  
  
-[debug] [2020-01-21T15:05:45.387Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T12:13:47.395Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] +  hosting: Local server: http://localhost:5000

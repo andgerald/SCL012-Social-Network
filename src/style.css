@@ -2,7 +2,130 @@
     padding: 0px;
     text-decoration: none;
     box-sizing: border-box;
-    
+}
+.leter-form{
+    margin-left: 10px;
+    font-family: Sarala;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    color: #828282;   
+    padding-bottom: 25px;
+}
+.formulario{
+    position: absolute;
+    width: 337.41px;
+    height: 441px;
+    margin-left: 40px;
+    top: 180px;
+    background: #F2F2F2;
+    border-radius: 10px;
+}   
+.forms{
+    position: absolute;
+    width: 200px;
+    height: 28.55px;
+    left: 122.88px;
+    background:rgba(196, 196, 196, 0.45);
+}
+.btn-send{
+    margin-left:135px;
+    width: 50%;
+    height: 45px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #F2F2F2;
+    cursor: pointer;
+    background: #FF8000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px; 
+}
+.redes{
+    width: 278.88px;
+    height: 49.71px;
+    left: 54px;
+    top: 420px;
+    background: #FF8000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #F2F2F2;
+}
+.red-img{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    margin-bottom: -7px;
+
+}
+.mostrar{
+    position: absolute;
+    background: #f2f2f2;
+    width: 329px;
+    height: 127px;
+    display: grid;
+    margin-left: 45px;
+}
+.email2{
+    margin-left: 62px;
+    width: 199px;
+    height: 28px;
+    background: rgba(196, 196, 196, 0.45);
+    border-bottom: 10px;
+}
+.password2{
+    margin-left: 24px;
+    width: 199px;
+    height: 27px;
+    background: rgba(196, 196, 196, 0.45);
+}
+.leter{
+    margin-left: 10px;
+    font-family: Sarala;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    color: #828282;   
+}
+.btnes{
+    margin-left:100px;
+    width: 50%;
+    height: 55px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #F2F2F2;
+    cursor: pointer;
+    background: #FF8000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-top: 140px;
 }
 .logo{
     cursor: pointer;
@@ -10,7 +133,6 @@
     margin-bottom: 0px;
     resize: unset;
 }
-
 .btns{
     margin-left:100px;
     width: 50%;
@@ -47,7 +169,6 @@
     align-items: center;
     text-align: center;
     color: #828282;
-
 }
 .menu{
     display: flex;

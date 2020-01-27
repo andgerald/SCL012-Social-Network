@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,54 +10,52 @@
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sarala&display=swap" rel="stylesheet">
 </head>
-<body> 
-<div id="root">
+
+<body>
+  <div id='root'>
   <header>
     <div class="time-service">
-      <img src="time-service1.jpg" style= "width: 100%; opacity: 70%;">
+      <img src="time-service1.jpg" style="width: 100%; opacity: 70%;">
     </div>
     <div class="logo">
-
-      <a href="muro"  id ="logo"  alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
+      <a href="#muro" id="logo" alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
     </div>
     <h1 class='text'>¿Andas buscando un servicio?</h1>
   </header>
-  <div id='principalContent'>
-
-    
-    <a href="registro"  class="btns">Registrate</a>
+  
+    <a href="#registro" id="registry" class="btns">Registrate</a>
     <br>
-    <a href="iniciar"  class="btns">Ya tengo una cuenta</a>
-    
-</div>
-
-    <footer>
+    <a href="#iniciar" id="access" class="btns">Ya tengo una cuenta</a>
+ 
+  </div>
+  <footer>
     <div>
 
     </div>
-    </footer>
+  </footer>
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyASw2EHTfp3YOd38XfCtOAT0ORxeXVCWJ4",
+      authDomain: "red-social-c9212.firebaseapp.com",
+      databaseURL: "https://red-social-c9212.firebaseio.com",
+      projectId: "red-social-c9212",
+      storageBucket: "red-social-c9212.appspot.com",
+      messagingSenderId: "238297962501",
+      appId: "1:238297962501:web:f70fa7c61d6bb01c51e46c",
+      measurementId: "G-F094J9Y6YG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
   <script type="module" src="main.js"></script>
-    
-  
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyASw2EHTfp3YOd38XfCtOAT0ORxeXVCWJ4",
-    authDomain: "red-social-c9212.firebaseapp.com",
-    databaseURL: "https://red-social-c9212.firebaseio.com",
-    projectId: "red-social-c9212",
-    storageBucket: "red-social-c9212.appspot.com",
-    messagingSenderId: "238297962501",
-    appId: "1:238297962501:web:f70fa7c61d6bb01c51e46c",
-    measurementId: "G-F094J9Y6YG"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+
 </body>
+
 </html>
-
-
