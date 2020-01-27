@@ -1,1 +1,30 @@
 
+[debug] [2020-01-27T14:15:30.455Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T14:15:30.481Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-27T14:15:30.484Z] CLI Version:   7.12.1
+[debug] [2020-01-27T14:15:30.485Z] Platform:      win32
+[debug] [2020-01-27T14:15:30.485Z] Node Version:  v10.16.3
+[debug] [2020-01-27T14:15:30.494Z] Time:          Mon Jan 27 2020 11:15:30 GMT-0300 (GMT-03:00)
+[debug] [2020-01-27T14:15:30.495Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T14:15:30.495Z] 
+[debug] [2020-01-27T14:15:30.537Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-27T14:15:30.539Z] > authorizing via signed-in user
+[debug] [2020-01-27T14:15:30.540Z] [iam] checking project red-social-c9212 for permissions ["firebase.projects.get"]
+[debug] [2020-01-27T14:15:30.547Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-27T14:15:30.548Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-27T14:15:30.895Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T14:15:30.988Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-c9212:testIamPermissions  
+
+[debug] [2020-01-27T14:15:32.254Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T14:15:32.266Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-c9212  
+ 
+[debug] [2020-01-27T14:15:35.197Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\lenovo\Desktop\red\SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-27T14:15:35.228Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-c9212/webApps/-/config  
+ 
+[debug] [2020-01-27T14:15:36.193Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000
