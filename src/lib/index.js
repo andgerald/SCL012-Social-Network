@@ -1,4 +1,4 @@
- /* export function register(email,password){ //PARA CREAR CUENTA
+ export function register(email,password){ //PARA CREAR CUENTA
     // si esta promesa no funciona, se ejecutará el catch, el cual captura el error y lo alerta
     firebase.auth().createUserWithEmailAndPassword(email,password)  
     .catch(function(error) {
@@ -13,8 +13,9 @@
 export function passIn(email2,password2){ //PARA INGRESAR
   firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
     // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    let errorCode = error.code;
+    let errorMessage = error.message;
+   
     // ...
   });  
 }
@@ -24,13 +25,13 @@ export function observer(){ // si existe un usuario ya registrado ejecutara un i
     if (user) { 
       showUp();
       // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
       // ...
     } else {
       // User is signed out.
@@ -50,4 +51,3 @@ export function signOff(){
   .catch(function(error){
   })
 }
-*/
