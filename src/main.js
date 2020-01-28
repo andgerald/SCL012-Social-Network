@@ -1,16 +1,10 @@
-import {register, passIn, closeSession, loginGoogle, loginFacebook } from './lib/index.js';
+import {register, passIn, closeSession} from './lib/index.js';
 
-<<<<<<< HEAD
-const accountNew = document.getElementById('registro');
-accountNew.addEventListener('click', () => {
-  const next = document.getElementById('root');
-  next.innerHTML = `
-=======
 //PAGINA DE INICIO
 
 const loadLanding = ()=> {
+  window.location.hash = '/inicio';
 const landing = document.getElementById ('root');
-window.location.hash = '/inicio';
 landing.innerHTML = `
 <header>
   <div class="time-service"
@@ -51,10 +45,9 @@ loadLanding();
 
 
 const loadRegisterUser = ()=> {
-  const registerUser = document.getElementById ('root');
   window.location.hash = '/registro';
+  const registerUser = document.getElementById ('root');
   registerUser.innerHTML =   `
->>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
     <div class="logo">
       <a href="#muro" id="logo" alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
     </div>
@@ -64,24 +57,6 @@ const loadRegisterUser = ()=> {
       <p class='leter-form'>Apellido:<input type='lastName' class='forms' id='lastName' placeholder='Ingresa tu Apellido'></p>
       <p class='leter-form'>Email:<input type='email' id='email'class='forms' placeholder='Ingresa email'></p>
       <p class='leter-form'>Contraseña:<input type='password'class='forms' id='password' placeholder='Ingresa contraseña'></p>
-<<<<<<< HEAD
-      <button  class='btn-send' id='send'>Enviar</button>
-      <button class='redes' id='google'> <img class='red-img' src="img/google.png" >ingresa con Google</button>
-      <button class='redes' id='facebook'> <img class='red-img' src="img/ll.png" >ingresa con Facebook</button>   
-      </form>`;
-});
-const registeredAccount = document.getElementById('access');
-registeredAccount.addEventListener('click', () => {
-  const nexTwo = document.getElementById('root');
-  nexTwo.innerHTML = `
-  <div class="time-service">
-    <img src="time-service1.jpg" style="width: 100%; opacity: 70%;">
-  </div>
-  <div class="logo">
-    <a href="#muro" id="logo" alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
-  </div>
-  <div class='mostrar'
-=======
       <button  class='btn-send' id='btnSignUpUser'>Enviar</button>
       <button class='redes' id='btnLoginGoogle'> <img class='red-img' src="google.png" >ingresa con Google</button>
       <button class='redes' id='btnLoginFacebook'> <img class='red-img' src="ll.png" >ingresa con Facebook</button>   
@@ -98,13 +73,11 @@ const password = document.getElementById('password').value
   register(name, lastName, email, password);
 });
 
-const btnLoginGoogle = registerUser.querySelector('btnLoginGoogle');
-
+const btnLoginGoogle = registerUser.querySelector('#btnLoginGoogle');
 btnLoginGoogle.addEventListener ('click', () => {
   loginGoogle();
 });
-
-const btnLoginFacebook =registerUser.querySelector('btnLoginFacebook');
+const btnLoginFacebook =registerUser.querySelector('#btnLoginFacebook');
 
 btnLoginFacebook.addEventListener ('click', () => {
   loginFacebook();
@@ -112,12 +85,60 @@ btnLoginFacebook.addEventListener ('click', () => {
 
 }
 
+ //LOGIN CON GOOGLE
+
+  const loginGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const token = result.credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    const credential = error.credential;
+    // ...
+  });
+}
+
+
+ //LOGIN CON FACEBOOK
+const loginFacebook = () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const token = result.credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    const credential = error.credential;
+    // ...
+  });
+}
+
+
+
 // PAGINA PARA INICIAR SESION
 
 
 const loadAccessUser = ()=> {
-  const accessUser = document.getElementById ('root');
   window.location.hash = '/ingreso';
+  const accessUser = document.getElementById ('root');
   accessUser.innerHTML =  `
   <div class="img-header">
     <img src="./img/time-service1.jpg" style="width: 100%; opacity: 70%;">
@@ -126,21 +147,11 @@ const loadAccessUser = ()=> {
     <a href="#muro" id="logo" alt=""> <img src="./img/logo-weservice.png" style="cursor: pointer;"> </a>
   </div>
   <div class='mostrar'>
->>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
     <div class='containerEnter'>
      <p class='leter'>Email: <input type='email' class='email2' id='email2' placeholder='Ingresa email'></p>
       <p class='leter'>Contraseña: <input type='password' class='password2'  id='password2' placeholder='Ingresa contraseña'></p>
    </div>
   <div >
-<<<<<<< HEAD
-  <button class='btnes' id='accesso'>Ingresar</button>`;
-});
-
-const logo = document.getElementById('logo');
-logo.addEventListener('click', () => {
-  const next = document.getElementById('root');
-  next.innerHTML = `
-=======
   <button class='btnes' id='btnSignInUser'>Ingresar</button>`;
   
 
@@ -197,16 +208,11 @@ const loadWallPublications = ()=> {
   const wallPublications = document.getElementById ('root');
   window.location.hash = '/muro';
   wallPublications.innerHTML = `
->>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
 <header class="header-position">
   <div class="marca-header">
     <div class="encabezado" style="margin-left:35%"><img src="./img/logo-weservice.png" style="cursor: pointer; width:50%" alt="logo">
-<<<<<<< HEAD
-      <a class="" id="cerrar-sesion" href=""><img class="img-header" src="./img/close.png" alt="cerrar-sesión"></a>
-=======
     <a class="" id="btnCloseSession" href=""><img class="img-header" src="./img/close.png" alt="cerrar-sesión"></a>
 
->>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
     </div>
   </div>
 
@@ -246,37 +252,16 @@ const loadWallPublications = ()=> {
       <a class="nav" href=""><img class="img-header"  src="./img/user.png" alt="Perfil"></a> 
     </div>
   </footer>
-<<<<<<< HEAD
-</footer>`;
-  const div = document.createElement('div');
-  div.innerHTML = temp;
-  const btnLogOut = div.querySelector('#cerrar-sesion');
-  const btnPost = div.querySelector('#publicar');
-  const tagDiv = div.querySelector('#lista-publicaciones');
-  post.forEach(post => {
-    tagDiv.appendChild(
-      cadaPost(post, firebase.auth().currentUser.uid));
-  });
-  btnPost.addEventListener('click', addPostOnSubmit);
-  btnLogOut.addEventListener('click', logOutOnClick);
-  return div;
-});
-=======
 </footer>
-
-    `;
+`;
 
 
 const btnCloseSession = wallPublications.querySelector('#btnCloseSession');
 
 btnCloseSession.addEventListener ('click', () => {
-  closeSession();
+closeSession();
 });
 
-
- 
-
-};
 
 // MANEJANDO LAS RUTAS
 window.addEventListener('hashchange', () => {
@@ -291,16 +276,4 @@ window.addEventListener('hashchange', () => {
     loadWallPublications();
   }
 });
-  
-
-const switchTemp = (hash) => {
-  if (hash === '/#inicio' || hash === '/#registro' || hash ==='#/ingreso' || hash === '/#muro') {
-    return hashshowTemp();
-  }
-  return showTemp('/#inicio');
-};
-  
-
   window.addEventListener('load',  loadLanding ());
-  window.addEventListener('hashchange', () => switchTemp(window.location.hash));
->>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
