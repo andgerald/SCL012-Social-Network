@@ -1,5 +1,5 @@
 
-const accountNew = document.getElementById('registry');
+const accountNew = document.getElementById('registro');
 accountNew.addEventListener('click', () => {
   const next = document.getElementById('root');
   next.innerHTML = `
@@ -13,8 +13,8 @@ accountNew.addEventListener('click', () => {
       <p class='leter-form'>Email:<input type='email' id='email'class='forms' placeholder='Ingresa email'></p>
       <p class='leter-form'>Contraseña:<input type='password'class='forms' id='password' placeholder='Ingresa contraseña'></p>
       <button  class='btn-send' id='send'>Enviar</button>
-      <button class='redes' id='google'> <img class='red-img' src="google.png" >ingresa con Google</button>
-      <button class='redes' id='facebook'> <img class='red-img' src="ll.png" >ingresa con Facebook</button>   
+      <button class='redes' id='google'> <img class='red-img' src="img/google.png" >ingresa con Google</button>
+      <button class='redes' id='facebook'> <img class='red-img' src="img/ll.png" >ingresa con Facebook</button>   
       </form>`;
 });
 const registeredAccount = document.getElementById('access');
@@ -36,23 +36,14 @@ registeredAccount.addEventListener('click', () => {
   <button class='btnes' id='accesso'>Ingresar</button>`;
 });
 
-/*import {register} from './lib/index.js';
-import {passIn} from './lib/index.js';
-import {observer} from './lib/index.js';
-import {signOff} from './lib/index.js';
-import {showUp} from './lib/index.js';
-*/
-let logo = document.getElementById("logo");
-logo.addEventListener("click", () => {
-  console.log("sirve");
-  let next = document.getElementById("root");
+const logo = document.getElementById('logo');
+logo.addEventListener('click', () => {
+  const next = document.getElementById('root');
   next.innerHTML = `
 <header class="header-position">
   <div class="marca-header">
-
     <div class="encabezado" style="margin-left:35%"><img src="./img/logo-weservice.png" style="cursor: pointer; width:50%" alt="logo">
-    <a class="" id="cerrar-sesion" href=""><img class="img-header" src="./img/close.png" alt="cerrar-sesión"></a>
-
+      <a class="" id="cerrar-sesion" href=""><img class="img-header" src="./img/close.png" alt="cerrar-sesión"></a>
     </div>
   </div>
 
@@ -92,19 +83,17 @@ logo.addEventListener("click", () => {
       <a class="nav" href=""><img class="img-header"  src="./img/user.png" alt="Perfil"></a> 
     </div>
   </footer>
-</footer>
-
-    `;
-    const div = document.createElement('div');
-    div.innerHTML = temp;
-    const btnLogOut = div.querySelector('#cerrar-sesion');
-    const btnPost = div.querySelector('#publicar');
-    const tagDiv = div.querySelector('#lista-publicaciones');
-    posts.forEach(post => {
-      tagDiv.appendChild(
-        cadaPost(post, firebase.auth().currentUser.uid));
-    });
-    btnPost.addEventListener('click', addPostOnSubmit);
-    btnLogOut.addEventListener('click', logOutOnClick);
-    return div;
-})
+</footer>`;
+  const div = document.createElement('div');
+  div.innerHTML = temp;
+  const btnLogOut = div.querySelector('#cerrar-sesion');
+  const btnPost = div.querySelector('#publicar');
+  const tagDiv = div.querySelector('#lista-publicaciones');
+  post.forEach(post => {
+    tagDiv.appendChild(
+      cadaPost(post, firebase.auth().currentUser.uid));
+  });
+  btnPost.addEventListener('click', addPostOnSubmit);
+  btnLogOut.addEventListener('click', logOutOnClick);
+  return div;
+});
