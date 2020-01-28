@@ -1,71 +1,51 @@
-let database = firebase.firestore();
- 
- export function register(name, lastName, email, password){ //PARA REGISTRAR
+ export function register(email,password){ //PARA CREAR CUENTA
+    // si esta promesa no funciona, se ejecutará el catch, el cual captura el error y lo alerta
     firebase.auth().createUserWithEmailAndPassword(email,password)  
-    .then(function(){
-      saveCollectionUser(name, lastName, email, password);
-    })
-    .then(()=> {
-      emailVerification();
-    })
     .catch(function(error) {
       // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert ('La contraseña es débil');
-      }
-      else {
-        alert (errorMessage)
-      }
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
     });
   };
 
-  export function passIn(email2,password2){ // PARA INGRESAR
-      firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });  
-    }
-    
- function saveCollectionUser(name, lastName, email, password){
-  database.collection('RegisteredUsers').add({
-      name:name,
-      lastName:lastName,
-      email:email,
-      password:password,
-  })
-  .then(docRef => {
-    console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(error => {
-    console.error("Error adding document: ", error);
-  })
-}
-// ENVIAR EMAIL DE VERIFICACION 
 
-const emailVerification = () => {
-  const user = firebase.auth().currentUser;
-
-  user.sendEmailVerification()
-  .then(()=>{
-    // Email sent.
-    console.log ('Enviando correo...');
-  }).catch(function(error) {
-    // An error happened.
-    console.log (error);
+export function passIn(email2,password2){ //PARA INGRESAR
+  firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
+    // Handle Errors here.
+    let errorCode = error.code;
+    let errorMessage = error.message;
   });
 }
 
-export function closeSession() {
-  firebase.auth().signOut()  
-    .then(() => {
-      console.log('Saliendo...');
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  };
+export function observer(){ // si existe un usuario ya registrado ejecutara un if y sino no hace nada
+  firebase.auth().onAuthStateChanged(function(user){
+    if (user){
+      showUp();
+      // User is signed in.
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
+      // ...
+    } else {
+      // User is signed out.
+      // ...
+    }
+  });
+}
 
+function showUp() {
+  document.getElementById('btnlogout').style.display = 'block';
+}
+export function signOff() {
+  firebase.auth().signOut()
+ .then(function(){
+    document.getElementById('btnlogout').style.display = 'none';
+  })
+  .catch(function(error){
+  })
+}

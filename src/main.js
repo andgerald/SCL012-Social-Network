@@ -276,4 +276,4 @@ window.addEventListener('hashchange', () => {
     loadWallPublications();
   }
 });
-  window.addEventListener('load',  loadLanding ());
+window.addEventListener('load', loadLanding ());
