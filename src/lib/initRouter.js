@@ -1,13 +1,5 @@
-import { redsocial } from './vistas.js';
-import { getPostRouter } from './vistas.js';
-import {register} from './index.js';
-import {passIn} from './lib/index.js';
-import {observer} from './lib/index.js';
-import {signOff} from './lib/index.js';
-import {showUp} from './lib/index.js';
 
-
-export const initRouter = () => {
+/*export const initRouter = () => {
 
   const showTemp = (routers) => {
     const router = routers.substr(2, routers.length - 2);
@@ -34,4 +26,4 @@ export const initRouter = () => {
   
   window.addEventListener('load', switchTemp(window.location.hash));
   window.addEventListener('hashchange', () => switchTemp(window.location.hash));
-}
+}*/

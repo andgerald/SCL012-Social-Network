@@ -1,8 +1,60 @@
+import {register, passIn, closeSession, loginGoogle, loginFacebook } from './lib/index.js';
 
+<<<<<<< HEAD
 const accountNew = document.getElementById('registro');
 accountNew.addEventListener('click', () => {
   const next = document.getElementById('root');
   next.innerHTML = `
+=======
+//PAGINA DE INICIO
+
+const loadLanding = ()=> {
+const landing = document.getElementById ('root');
+window.location.hash = '/inicio';
+landing.innerHTML = `
+<header>
+  <div class="time-service"
+      <img src='./img/time-service.jpg' id="time"  style="opacity: 70%;">
+  </div>
+</header>
+  <div class="logo">
+    <a id="logo" alt=""><img src="./img/logo-weservice.png" style="cursor: pointer;"> </a>
+    <h1 class='text'>¿Andas buscando un servicio?</h1>
+    <br>
+    <button class='btns' id='btnSignUp'>Regístrate</button>
+    <button class='btns' id='btnSignIn'>ya tengo una cuenta</button>
+  </div>
+  `;
+const btnSignUp= landing.querySelector('#btnSignUp');
+const btnSignIn= landing.querySelector('#btnSignIn');
+
+
+btnSignUp.addEventListener ('click', () => {
+  landing.innerHTML = '';
+  loadRegisterUser();
+});
+
+
+
+btnSignIn.addEventListener ('click', () => {
+  landing.innerHTML = '';
+  loadAccessUser();
+});
+
+
+};
+
+loadLanding();
+
+
+//PAGINA PARA CREAR CUENTA
+
+
+const loadRegisterUser = ()=> {
+  const registerUser = document.getElementById ('root');
+  window.location.hash = '/registro';
+  registerUser.innerHTML =   `
+>>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
     <div class="logo">
       <a href="#muro" id="logo" alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
     </div>
@@ -12,6 +64,7 @@ accountNew.addEventListener('click', () => {
       <p class='leter-form'>Apellido:<input type='lastName' class='forms' id='lastName' placeholder='Ingresa tu Apellido'></p>
       <p class='leter-form'>Email:<input type='email' id='email'class='forms' placeholder='Ingresa email'></p>
       <p class='leter-form'>Contraseña:<input type='password'class='forms' id='password' placeholder='Ingresa contraseña'></p>
+<<<<<<< HEAD
       <button  class='btn-send' id='send'>Enviar</button>
       <button class='redes' id='google'> <img class='red-img' src="img/google.png" >ingresa con Google</button>
       <button class='redes' id='facebook'> <img class='red-img' src="img/ll.png" >ingresa con Facebook</button>   
@@ -28,11 +81,58 @@ registeredAccount.addEventListener('click', () => {
     <a href="#muro" id="logo" alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
   </div>
   <div class='mostrar'
+=======
+      <button  class='btn-send' id='btnSignUpUser'>Enviar</button>
+      <button class='redes' id='btnLoginGoogle'> <img class='red-img' src="google.png" >ingresa con Google</button>
+      <button class='redes' id='btnLoginFacebook'> <img class='red-img' src="ll.png" >ingresa con Facebook</button>   
+      </form>`;
+
+
+
+const btnSignUpUser=registerUser.querySelector('#btnSignUpUser');
+btnSignUpUser.addEventListener ('click', () => {
+const name = document.getElementById('name').value
+const lastName = document.getElementById('lastName').value
+const email = document.getElementById('email').value
+const password = document.getElementById('password').value
+  register(name, lastName, email, password);
+});
+
+const btnLoginGoogle = registerUser.querySelector('btnLoginGoogle');
+
+btnLoginGoogle.addEventListener ('click', () => {
+  loginGoogle();
+});
+
+const btnLoginFacebook =registerUser.querySelector('btnLoginFacebook');
+
+btnLoginFacebook.addEventListener ('click', () => {
+  loginFacebook();
+});
+
+}
+
+// PAGINA PARA INICIAR SESION
+
+
+const loadAccessUser = ()=> {
+  const accessUser = document.getElementById ('root');
+  window.location.hash = '/ingreso';
+  accessUser.innerHTML =  `
+  <div class="img-header">
+    <img src="./img/time-service1.jpg" style="width: 100%; opacity: 70%;">
+  </div>
+  <div class="logo">
+    <a href="#muro" id="logo" alt=""> <img src="./img/logo-weservice.png" style="cursor: pointer;"> </a>
+  </div>
+  <div class='mostrar'>
+>>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
     <div class='containerEnter'>
      <p class='leter'>Email: <input type='email' class='email2' id='email2' placeholder='Ingresa email'></p>
       <p class='leter'>Contraseña: <input type='password' class='password2'  id='password2' placeholder='Ingresa contraseña'></p>
    </div>
   <div >
+<<<<<<< HEAD
   <button class='btnes' id='accesso'>Ingresar</button>`;
 });
 
@@ -40,10 +140,73 @@ const logo = document.getElementById('logo');
 logo.addEventListener('click', () => {
   const next = document.getElementById('root');
   next.innerHTML = `
+=======
+  <button class='btnes' id='btnSignInUser'>Ingresar</button>`;
+  
+
+
+const btnSignInUser = accessUser.querySelector('#btnSignInUser');
+
+btnSignInUser.addEventListener ('click', () => {
+  const email2 = document.getElementById('email2').value
+  const password2 = document.getElementById('password2').value
+  
+  passIn(email2, password2);
+});
+
+
+
+}
+// OBSERVADOR PARA IDENTIFICAR SI EL USUARIO ESTA LOGUEADO
+
+export function observer(){ 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) { 
+        console.log('Existe usuario activo');
+        loadWallPublications();
+        landing.innerHTML = '';
+        //loadRegisterUser.innerHTML = '';
+        accessUser.innerHTML= '';
+        
+        // User is signed in.
+        let displayName = user.displayName;
+        let email = user.email;
+        let emailVerified = user.emailVerified;
+        let photoURL = user.photoURL;
+        let isAnonymous = user.isAnonymous;
+        let uid = user.uid;
+        let providerData = user.providerData;
+        // ...
+      } else {
+        console.log('No existe usuario activo');
+        //alert('inicia sesion');
+        //wallPublications.innerHTML = '';
+        loadLanding();
+
+        // User is signed out.
+      }
+    });
+  }
+
+observer();
+
+//PAGINA DEL MURO
+
+
+const loadWallPublications = ()=> {
+  const wallPublications = document.getElementById ('root');
+  window.location.hash = '/muro';
+  wallPublications.innerHTML = `
+>>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
 <header class="header-position">
   <div class="marca-header">
     <div class="encabezado" style="margin-left:35%"><img src="./img/logo-weservice.png" style="cursor: pointer; width:50%" alt="logo">
+<<<<<<< HEAD
       <a class="" id="cerrar-sesion" href=""><img class="img-header" src="./img/close.png" alt="cerrar-sesión"></a>
+=======
+    <a class="" id="btnCloseSession" href=""><img class="img-header" src="./img/close.png" alt="cerrar-sesión"></a>
+
+>>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
     </div>
   </div>
 
@@ -83,6 +246,7 @@ logo.addEventListener('click', () => {
       <a class="nav" href=""><img class="img-header"  src="./img/user.png" alt="Perfil"></a> 
     </div>
   </footer>
+<<<<<<< HEAD
 </footer>`;
   const div = document.createElement('div');
   div.innerHTML = temp;
@@ -97,3 +261,46 @@ logo.addEventListener('click', () => {
   btnLogOut.addEventListener('click', logOutOnClick);
   return div;
 });
+=======
+</footer>
+
+    `;
+
+
+const btnCloseSession = wallPublications.querySelector('#btnCloseSession');
+
+btnCloseSession.addEventListener ('click', () => {
+  closeSession();
+});
+
+
+ 
+
+};
+
+// MANEJANDO LAS RUTAS
+window.addEventListener('hashchange', () => {
+
+  if(window.location.hash === '#/inicio'){ 
+    loadLanding ();
+  }else if(window.location.hash === '#/registro'){ 
+    loadRegisterUser();
+  }else if(window.location.hash === '#/ingreso'){
+    loadAccessUser();
+  }else if(window.location.hash==='#/muro'){
+    loadWallPublications();
+  }
+});
+  
+
+const switchTemp = (hash) => {
+  if (hash === '/#inicio' || hash === '/#registro' || hash ==='#/ingreso' || hash === '/#muro') {
+    return hashshowTemp();
+  }
+  return showTemp('/#inicio');
+};
+  
+
+  window.addEventListener('load',  loadLanding ());
+  window.addEventListener('hashchange', () => switchTemp(window.location.hash));
+>>>>>>> 9098c3705a953c9c23d54eceb9313a1407c4d870
