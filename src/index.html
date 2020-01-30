@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +9,14 @@
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sarala&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div id='root'>
-  <header>
-    <div class="time-service">
-      <img src="time-service1.jpg" style="width: 100%; opacity: 70%;">
-    </div>
-    <div class="logo">
-      <a href="#muro" id="logo" alt=""> <img src="logo-weservice.png" style="cursor: pointer;"> </a>
-    </div>
-    <h1 class='text'>¿Andas buscando un servicio?</h1>
-  </header>
-  
-    <a href="#registro" id="registry" class="btns">Registrate</a>
-    <br>
-    <a href="#iniciar" id="access" class="btns">Ya tengo una cuenta</a>
- 
-  </div>
-  <footer>
-    <div>
-
-    </div>
-  </footer>
-
-
+    
+    <div id="root"></div>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -55,7 +33,5 @@
     firebase.initializeApp(firebaseConfig);
   </script>
   <script type="module" src="main.js"></script>
-
 </body>
-
 </html>
