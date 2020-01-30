@@ -3,9 +3,14 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+
+.containerEnter{
+    margin-top: 20px;
+    margin-right: 10px;
+}
 .leter-form{
     margin-left: 10px;
-    font-family: Sarala;
+    font-family: 'Sarala', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -82,50 +87,30 @@
     display: grid;
     margin-left: 45px;
 }
-.email2{
-    margin-left: 62px;
+.inputForm{
+    display: flex;
+    float: right;
+    border: none;
     width: 199px;
     height: 28px;
     background: rgba(196, 196, 196, 0.45);
-    border-bottom: 10px;
+    
 }
-.password2{
-    margin-left: 24px;
-    width: 199px;
-    height: 27px;
-    background: rgba(196, 196, 196, 0.45);
-}
+
 .leter{
     margin-left: 10px;
-    font-family: Sarala;
+    font-family:'Sarala', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 23px;
     display: flex;
+    float: left;
     align-items: center;
     color: #828282;   
 }
-.btnes{
-    margin-left:100px;
-    width: 50%;
-    height: 55px;
-    justify-content: center;
-    flex-wrap: nowrap;
-    font-family: 'Shadows Into Light Two', cursive;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #F2F2F2;
-    cursor: pointer;
-    background: #FF8000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    margin-top: 140px;
+#btnSignInUser{
+    margin-top: 80px;
 }
 .logo{
     cursor: pointer;
@@ -152,6 +137,8 @@
     background: #FF8000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
+    border: none;
+    margin-bottom: 10px;
 }
 .btns:hover{
     cursor: pointer;
@@ -159,16 +146,15 @@
     background-color:black ;
 }
 .text{
-    
+    display: flex;
     font-family: 'Sarala', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 23px;
-    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: nowrap;
     align-items: center;
     text-align: center;
     color: #828282;
+    margin-bottom: 30px;
+    font-size: 18px;
 }
 .menu{
     display: flex;
@@ -210,7 +196,7 @@ main{
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-    min-height: 66vh;
+    min-height: 60vh;
     flex-wrap: wrap;
     background-attachment: scroll;
    
@@ -282,20 +268,50 @@ main{
     width: 70%;
 
  }
+ .root{
+    margin-left: 20%;
+    margin-right: 20%;
+}
 
 
-  /*@media (min-width: 768px) and (max-width: 1024px) {
-   
-    .time-service{
-        float: left;
-        width: 50%;
-    }
-    .page{
-        float: right;
-        width: 50%;
-    }
-    .logo{
-        width: 20%;
-    }
+  @media (min-width: 900px) and (max-width: 2600px) {
+ 
+.btns {
+    width: 30%;
+    margin-left: 52%; 
+    height:55px;
+    
+}
+.text {
+    display: flex;
+    float: initial;
+    width: 33%;
+}
+.time-service{
+    display: flex;
+    width: 50%;
+    float: left;
 
-  }*/
+}
+.logo{
+    margin-left: 60%;
+
+}
+.mostrar{
+    margin-left: 55%;
+}
+.muro{
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.encabezado{
+    width: 30%;
+}
+.btnCloseSession{
+    float: right;
+}
+.barra{
+    float: right;
+}
+  }
