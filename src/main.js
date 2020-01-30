@@ -1,7 +1,7 @@
-import {register, passIn, closeSession } from './lib/index.js';
+import { register, passIn, closeSession } from './lib/index.js';
 
-//PAGINA DE INICIO
-
+// eslint-disable-next-line spaced-comment
+/*PAGINA DE INICIO*/
 const loadLanding = () => {
   window.location.hash = '/inicio';
   const landing = document.getElementById('root');
