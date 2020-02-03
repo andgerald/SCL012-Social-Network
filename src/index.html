@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,15 @@
   <link href="https://fonts.googleapis.com/css?family=Sarala&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div id="root"></div>
+    <div id="root">
 
+    
+  <div class="container">
+    <textarea type="text" id="postt" placeholder="escribir"cols="30" rows="10"></textarea>
+    <button class="guardar" id="guardar1">  Guardar </button>
+  </div>
+  <div id="desplegar"></div>
+</div>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
@@ -33,5 +40,8 @@
     firebase.initializeApp(firebaseConfig);
   </script>
   <script type="module" src="main.js"></script>
+
+
 </body>
+
 </html>
